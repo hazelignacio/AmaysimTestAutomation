@@ -25,6 +25,9 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install robotframework
+          pip install robotframework-seleniumlibrary
+          pip install robotframework-selenium2library
+          pip install selenium
 
       - name: Install Chrome Web Driver
         run: |
