@@ -38,3 +38,4 @@ jobs:
       - name: Run Robot Tests
         run: |
           robot TestSuites/smoke.robot
+          
