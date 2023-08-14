@@ -1,5 +1,5 @@
 # AmaysimTestAutomation
-This Project will automate www.amaysim.com.au mainly focusing on features where in tha User will purchase a 7-day SIM Plan with Failed Credit Card Payment.
+This Project will automate www.amaysim.com.au mainly focusing on features where in the User will purchase a 7-day SIM Plan with Failed Credit Card Payment.
 
 # Overview
 This project was developed using `RobotFramework` and `MacOS`.
