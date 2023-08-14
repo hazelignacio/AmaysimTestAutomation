@@ -32,12 +32,14 @@ jobs:
       - name: Install Chrome Web Driver
         run: |
           if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-              sudo apt-get update
-              sudo apt-get install -y chromium-chromedriver
-              cp /usr/lib/chromium-browser/chromedriver $GITHUB_WORKSPACE/test\ data/
+            sudo apt-get update
+            sudo apt-get install -y chromium-chromedriver
+            mkdir -p $GITHUB_WORKSPACE/chrome\ driver
+            cp /usr/lib/chromium-browser/chromedriver $GITHUB_WORKSPACE/chrome\ driver/
           elif [[ "$OSTYPE" == "darwin"* ]]; then
-              brew install --cask chromedriver
-              cp /usr/local/bin/chromedriver $GITHUB_WORKSPACE/test\ data/
+            brew install --cask chromedriver
+            mkdir -p $GITHUB_WORKSPACE/chrome\ driver
+            cp /usr/local/bin/chromedriver $GITHUB_WORKSPACE/chrome\ driver/
           fi
 
       - name: Run Robot Tests
