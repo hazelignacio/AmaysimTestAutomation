@@ -1,1 +1,29 @@
+name: Run Robot Framework Tests
 
+on: [push]  # Trigger the workflow on push events
+
+jobs:
+  run-tests:
+    runs-on: macos-latest  # Use the latest version of macOS
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8  # Use the desired Python version
+
+    - name: Install Chrome WebDriver
+      run: |
+        brew install --cask chromedriver
+
+    - name: Install Robot Framework
+      run: |
+        pip install --upgrade pip
+        pip install robotframework robotframework-seleniumlibrary
+
+    - name: Run Robot Tests
+      run: |
+        robot path/to/testsuites.robot  # Replace with the correct path to your testsuite
