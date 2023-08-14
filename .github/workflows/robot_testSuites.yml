@@ -8,6 +8,7 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-latest
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -21,14 +22,14 @@ jobs:
         pip install --upgrade pip
         pip install robotframework
 
-      -name: Install Chrome WebDriver
-      run: |
-        if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-            sudo apt-get update
-            sudo apt-get install -y chromium-chromedriver
-        elif [[ "$OSTYPE" == "darwin"* ]]; then
-            brew install --cask chromedriver
-        fi
+     - name: Install Chrome Web Driver
+        run: |
+          if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+              sudo apt-get update
+              sudo apt-get install -y chromium-chromedriver
+          elif [[ "$OSTYPE" == "darwin"* ]]; then
+              brew install --cask chromedriver
+          fi
 
     - name: Run Robot Tests
       run: |
