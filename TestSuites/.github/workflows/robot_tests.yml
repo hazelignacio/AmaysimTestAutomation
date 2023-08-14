@@ -1,4 +1,4 @@
-name: Run Robot Framework Smoke Test
+name: Run Robot Framework Smoke Tests
 
 on:
   push:
