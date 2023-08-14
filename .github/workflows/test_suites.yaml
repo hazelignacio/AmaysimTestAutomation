@@ -26,4 +26,4 @@ jobs:
 
     - name: Run Robot Tests
       run: |
-        robot path/to/testsuites.robot  # Replace with the correct path to your testsuite
+        TestSuites/smoke.robot
