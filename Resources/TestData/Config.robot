@@ -9,7 +9,8 @@ Resource   ../../resources/Keywords/Amaysim_TS01_CreditCardPaymentFailed.robot
 *** Variables ***
 ${Homepage_URL}  https://www.amaysim.com.au/
 ${BROWSER}  CHROME
-${driver_path}  /Users/hazelignacio/Downloads/chromedriver
+#${driver_path}  /Users/hazelignacio/Downloads/chromedriver
+{driver_path}  /TestSuites/chromedriver
 
 
 *** Keywords ***
