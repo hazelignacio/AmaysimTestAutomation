@@ -1,1 +1,37 @@
+name: Run Robot Framework Smoke Tests
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install Robot Framework
+      run: |
+        pip install --upgrade pip
+        pip install robotframework
+
+      -name: Install Chrome WebDriver
+      run: |
+        if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+            sudo apt-get update
+            sudo apt-get install -y chromium-chromedriver
+        elif [[ "$OSTYPE" == "darwin"* ]]; then
+            brew install --cask chromedriver
+        fi
+
+    - name: Run Robot Tests
+      run: |
+        robot TestSuites/smoke.robot
